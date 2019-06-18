@@ -1,0 +1,17 @@
+<h2>Hola Amiguitos</h2>
+
+<ul>
+  <% @friends.each do |friend|%>
+  <li>
+    <div>Name: <%=friend[:name]%>
+      <%=friend[:last_name]%></div>
+    <div>Age: <%=friend[:age]%>
+  <%end %>
+</ul>
+
+<form action="/friends" method="post">
+   <input type="text" name="name">
+   <input type="text" name="last_name">
+   <input type="text" name="age">
+   <button type="submit">crear</button>
+</form>
