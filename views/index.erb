@@ -1,17 +1,11 @@
 <h2>Hola Amiguitos</h2>
-
+<a href="/friends/new_friend">crear un amigo</a>
 <ul>
-  <% @friends.each do |friend|%>
+  <% @friends.each_with_index do |friend, index|%>
   <li>
-    <div>Name: <%=friend[:name]%>
-      <%=friend[:last_name]%></div>
-    <div>Age: <%=friend[:age]%>
+    <div>
+    <a href="/friends/<%=index%>"> ver </a>  <%=friend[:name]%>
+    <a href="/friends/<%=index%>/edit"> editar </a>
+    </div>
   <%end %>
 </ul>
-
-<form action="/friends" method="post">
-   <input type="text" name="name">
-   <input type="text" name="last_name">
-   <input type="text" name="age">
-   <button type="submit">crear</button>
-</form>

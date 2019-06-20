@@ -1,0 +1,8 @@
+<h2> Edita tu amigo con id:<%=params[:id]%></h2>
+<form action="/friends/<%=@index%>" method="post">
+  <input type="hidden" name="_method" value="put">
+   Name:<input type="text" name="friend[name]" value="<%=@friend[:name]%>">
+   Last name:<input type="text" name="friend[last_name]" value="<%=@friend[:last_name]%>">
+   Age:<input type="text" name="friend[age]" value="<%=@friend[:age]%>">
+   <button type="submit">crear</button>
+</form>
